@@ -8,12 +8,16 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: '/НАЗВАНИЕ-ВАШЕГО-РЕПОЗИТОРИЯ/', // ВАЖНО! Замените на имя вашего репозитория
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-    // Добавьте поддержку расширений
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
   },
   server: {
     port: 3000,
