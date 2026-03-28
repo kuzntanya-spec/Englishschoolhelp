@@ -24,14 +24,17 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'  # строка 24 - обратите внимание на кавычки и отступы
-          
+          node-version: '22'  # Используйте Node.js 22 или 24 вместо 20
+          cache: 'npm'
+      
       - name: Install dependencies
         run: npm ci
-        
+      
       - name: Build
         run: npm run build
-        
+        env:
+          NODE_ENV: production
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
