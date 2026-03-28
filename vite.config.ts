@@ -12,13 +12,12 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+    // Добавьте поддержку расширений
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
   server: {
-    port: 3000, // Опционально: задайте порт
-    open: true, // Автоматически открывать браузер
+    port: 3000,
+    open: true,
   },
   assetsInclude: ['**/*.svg', '**/*.csv'],
-  
-  // Добавьте, если используете GitHub Pages
-  base: process.env.NODE_ENV === 'production' ? '/НАЗВАНИЕ-РЕПОЗИТОРИЯ/' : '/',
 })
